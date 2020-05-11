@@ -1,0 +1,16 @@
+function checkIfExists(jumbledWord, expetedWord) {
+  let jumbledWordArr = jumbledWord.split();
+  let expetedWordArr = expetedWord.split();
+
+  let final = expetedWordArr.map(w = {
+      if (jumbledWordArr.indexOf(w)  -1) {
+        let index =  jumbledWordArr.indexOf(w);
+        jumbledWordArr.splice(index,1);
+        return w;
+      }
+    });
+    
+  return final.join() === expetedWord;
+}
+
+console.log(checkIfExists(TEERPIONM, PERRMIT));
